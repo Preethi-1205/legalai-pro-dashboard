@@ -1,0 +1,19 @@
+{
+  // Ignore unknown CSS rules so @tailwind and @apply don’t throw warnings
+  "css.lint.unknownAtRules": "ignore",
+
+  // Enable Tailwind IntelliSense features
+  "tailwindCSS.includeLanguages": {
+    "plaintext": "html",
+    "javascript": "javascript",
+    "javascriptreact": "javascriptreact",
+    "typescript": "typescript",
+    "typescriptreact": "typescriptreact"
+  },
+
+  // Make sure Tailwind CSS IntelliSense scans your src folder
+  "tailwindCSS.experimental.configFile": "./tailwind.config.js",
+  "editor.quickSuggestions": {
+    "strings": true
+  }
+}
