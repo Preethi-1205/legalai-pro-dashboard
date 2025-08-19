@@ -74,6 +74,7 @@ export default function Documents() {
     });
   };
 
+  // 🟢 Handlers
   const handleView = (doc) => alert(`👁 Viewing: ${doc.name}`);
   const handleEdit = (doc) => alert(`✏️ Editing: ${doc.name}`);
 
@@ -86,18 +87,10 @@ export default function Documents() {
         </button>
       }
     >
-      <input
-        ref={inputRef}
-        type="file"
-        className="hidden"
-        onChange={onFileChange}
-      />
+      <input ref={inputRef} type="file" className="hidden" onChange={onFileChange} />
       <div className="space-y-3">
         {docs.map((d) => (
-          <div
-            key={d.id}
-            className="flex items-center justify-between border rounded-lg p-3"
-          >
+          <div key={d.id} className="flex items-center justify-between border rounded-lg p-3">
             <div className="flex items-center gap-3">
               <div className="p-2 bg-slate-100 rounded-lg">{iconFor(d.type)}</div>
               <div>
@@ -119,15 +112,11 @@ export default function Documents() {
                   <Download className="w-4 h-4" />
                 </a>
               ) : (
-                <button className="btn" disabled title="Only for uploaded files">
+                <button className="btn" disabled>
                   <Download className="w-4 h-4" />
                 </button>
               )}
-              <button
-                className="btn btn-danger"
-                onClick={() => removeDoc(d.id)}
-                aria-label="Remove"
-              >
+              <button className="btn btn-danger" onClick={() => removeDoc(d.id)}>
                 <Trash2 className="w-4 h-4" />
               </button>
             </div>
